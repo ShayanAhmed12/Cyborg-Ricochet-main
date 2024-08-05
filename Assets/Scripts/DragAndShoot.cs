@@ -62,7 +62,6 @@ public class DragAndShoot : MonoBehaviour
 
             return;
         }
-        
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -70,7 +69,6 @@ public class DragAndShoot : MonoBehaviour
             _isDragging = true;
             _animator.SetBool("ChargeUp", true);
         }
-            
         if (Input.GetMouseButton(0) && _isDragging)
         {
             Vector3 currentPoint = _camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3f));
@@ -121,7 +119,7 @@ public class DragAndShoot : MonoBehaviour
 
     void ApplyDrag()
     {
-        Vector3 dragForce = -1f * rb.velocity.sqrMagnitude * rb.velocity.normalized;
+        Vector3 dragForce = -1.1f * rb.velocity.sqrMagnitude * rb.velocity.normalized;
 
         rb.AddForce(dragForce);
 
@@ -141,7 +139,6 @@ public class DragAndShoot : MonoBehaviour
             Destroy(instantiatedSprite);
             dragforce = true;
             Invoke("resetDrag", 0.5f);
-            _animator.SetBool("StartJumping", false);
         }
     }
 
@@ -149,6 +146,7 @@ public class DragAndShoot : MonoBehaviour
     {
         if (!other.gameObject.CompareTag("bouncy"))
         {
+            _animator.SetBool("StartJumping", false);
             rb.useGravity = true;
             Destroy(instantiatedSprite);
             resetDrag();
@@ -165,10 +163,6 @@ public class DragAndShoot : MonoBehaviour
                 bounceCount = 0;
                 _audioManager.PlaySFX(_audioManager.Bounce);
             }
-        }
-        if (other.gameObject.CompareTag("test_enemy"))
-        {
-            Destroy(other.gameObject);
         }
     }
 

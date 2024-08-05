@@ -27,12 +27,8 @@ public class CharacterAttack : MonoBehaviour
     {
         if(Input.GetMouseButtonUp(0))
         {
-          //  _animator.SetBool("SwordAttack", true);
-           // _animator.SetBool("ChargeUp", false);
-            
-            //Debug.Log("Play attack animation");   
+            _animator.SetBool("Attack",true);
         }
-        
     }
 
     private void OnTriggerEnter(Collider other)

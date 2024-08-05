@@ -11,6 +11,7 @@ public class EnemyAttack : MonoBehaviour
     private DragAndShoot _dragAndShoot;
     private GameObject _gameObject;
     private Animator _animator;
+    private CharacterAttack _characterAttack;
     
     void Start()
     {
@@ -19,6 +20,7 @@ public class EnemyAttack : MonoBehaviour
         _gameObject = GameObject.Find("Character");
         _dragAndShoot = _gameObject.GetComponent<DragAndShoot>();
         _animator = GetComponent<Animator>();
+        _characterAttack = _gameObject.GetComponent<CharacterAttack>();
     }
     
     void Update()
@@ -56,4 +58,6 @@ public class EnemyAttack : MonoBehaviour
             Destroy(this.gameObject,0.85f);
         }
     }
+    
+    
 }

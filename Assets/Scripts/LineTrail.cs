@@ -5,9 +5,9 @@ public class LineTrail : MonoBehaviour
     private void Awake()
     {
         _lr = GetComponent<LineRenderer>();
-        _lr.numCapVertices = 40;
-        _lr.startWidth = 0.2f;
-        _lr.endWidth = 0.02f;
+        _lr.numCapVertices = 10;
+        _lr.startWidth = 0.1f;
+        _lr.endWidth = 0.01f;
     }
     public void RenderLine(Vector3 endpoint)
     {
