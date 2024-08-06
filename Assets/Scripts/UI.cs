@@ -9,6 +9,7 @@ public class UI : MonoBehaviour
 {
     VideoPlayer videoPlayer;
     [SerializeField] GameObject Panel;
+    [SerializeField] private GameObject levelsPanel;
     Audio audioManager;
 
 
@@ -75,5 +76,10 @@ public class UI : MonoBehaviour
     public void NextLevel()
     {
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    
+    public void Levels()
+    {
+        levelsPanel.SetActive(true);
     }
 }
