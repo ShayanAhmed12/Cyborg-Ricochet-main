@@ -40,7 +40,6 @@ public class Trajectory : MonoBehaviour
             if (Physics.Raycast(pos, moveStep, out hit, moveStep.magnitude, nonPlayer))
             {
                 // Debug.Log($"Raycast hit: {hit.collider.gameObject.name} with tag {hit.collider.gameObject.tag}");
-
                 if (hit.collider.CompareTag("bouncy"))
                 {
                     characterAim = false;
