@@ -24,6 +24,7 @@ public class DragAndShoot : MonoBehaviour
     [SerializeField] private int steps;
 
     private Vector3 _tempVec;
+    private Vector3 _CharacterCenter;
 
 
     private bool dragforce;
@@ -47,13 +48,12 @@ public class DragAndShoot : MonoBehaviour
 
     private void Update()
     {
-
-        Vector3 boxCenter = transform.position + (0.35f * new Vector3(0, 2.27f, 0));
         Vector3 halfExtents = new Vector3(0.1f, 0.7f, 0.1f);
+        _CharacterCenter = transform.position + (0.35f * new Vector3(0, 2.27f, 0));
         float maxDistance = 0.2f;
         Quaternion orientation = Quaternion.identity;
 
-        isGrounded = Physics.BoxCast(boxCenter, halfExtents, Vector3.down, out _hit, orientation, maxDistance);
+        isGrounded = Physics.BoxCast(_CharacterCenter, halfExtents, Vector3.down, out _hit, orientation, maxDistance);
         if (!isGrounded)
         {
             // _trail.EndLine();
@@ -79,7 +79,7 @@ public class DragAndShoot : MonoBehaviour
                 Mathf.Clamp(_startPoint.y - currentPoint.y, minPower.y, maxPower.y), 0);
 
 
-            Vector3[] trajectory = _trajectory.Plot(transform.position + (0.35f * new Vector3(0,3f,0)), _force * power, steps); // so that the trajectory starts from the middle of the character
+            Vector3[] trajectory = _trajectory.Plot(_CharacterCenter, _force * power, steps); // so that the trajectory starts from the middle of the character
             _trajectory.RenderTrajectory(trajectory);
         }
 
@@ -96,15 +96,17 @@ public class DragAndShoot : MonoBehaviour
             rb.velocity = _force * power;
             rb.useGravity = false;
             _animator.SetBool("ChargeUp", false);
-            _animator.SetBool("StartJumping", true);
-            _audioManager.PlaySFX(_audioManager.Booster);
-            if (bounceCount == 0)
-            {
-                // Debug.Log("1");
-                instantiatedSprite = Instantiate(spritePrefab, _tempVec + _force.normalized * 0.2f, Quaternion.identity);
-
+             _audioManager.PlaySFX(_audioManager.Booster);
+            if (_tempVec.y > _CharacterCenter.y) { // launched upwards
+                _animator.SetBool("StartJumping", true); 
+                instantiatedSprite = Instantiate(spritePrefab, _tempVec - new Vector3(0f,0.2f,0f), Quaternion.identity);
             }
-
+            else
+            {
+                _trajectory.EndLine02(); 
+                instantiatedSprite = Instantiate(spritePrefab, _tempVec + new Vector3(0f,0.4f,0), Quaternion.identity);
+                return; // if launched vertically downwards, spawn a gravity trigger slightly above to prevent infinite sliding   
+            }
         }
             
     }
@@ -158,7 +160,6 @@ public class DragAndShoot : MonoBehaviour
             if ((bounceCount != 0 && bounceHit >= bounceCount))
             {
                 Debug.Log("2");
-                instantiatedSprite = Instantiate(spritePrefab, _tempVec + _force.normalized * 0.2f, Quaternion.identity);
                 bounceHit = 0;
                 bounceCount = 0;
                 _audioManager.PlaySFX(_audioManager.Bounce);

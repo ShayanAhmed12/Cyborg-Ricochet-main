@@ -8,10 +8,12 @@ public class CharacterHealth : MonoBehaviour
 {
     [SerializeField] GameObject GameOver;
    private int _health;
+   public HealthBar HealthBar;
 
    private void Start()
    {
       _health = 100;
+      HealthBar.SetMaxHealth(_health);
    }
 
    private void Update()
@@ -28,6 +30,7 @@ public class CharacterHealth : MonoBehaviour
       if (other.gameObject.CompareTag("Bullet"))
       {
          _health -= 10;
+         HealthBar.SetHealth(_health);
       }
    }
    private void OnCollisionEnter(Collision other)
@@ -35,6 +38,7 @@ public class CharacterHealth : MonoBehaviour
       if (other.gameObject.CompareTag("enemy"))
       {
          _health = 100;
+         HealthBar.SetMaxHealth(_health);
       }
    }
 }

@@ -6,14 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cac0c56b-4670-40df-b266-547766472141" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Cyborg-Ricochet-main/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cyborg-Ricochet-main/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI/VideoTexture.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/UI/VideoTexture.renderTexture" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DragAndShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DragAndShoot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FinishPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FinishPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LineTrail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LineTrail.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Trajectory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Trajectory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/gravity trigger.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/gravity trigger.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +20,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterHealth.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Unity Repo/Cyborg-Ricochet-main/Assets/Scripts/LineTrail.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -116,6 +112,8 @@
       <workItem from="1722866482789" duration="1170000" />
       <workItem from="1722867669686" duration="13000" />
       <workItem from="1722867692262" duration="313000" />
+      <workItem from="1722868093472" duration="5313000" />
+      <workItem from="1722933267347" duration="10096000" />
     </task>
     <servers />
   </component>
