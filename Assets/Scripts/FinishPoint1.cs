@@ -1,14 +1,14 @@
 using UnityEngine;
 
-public class FinishPoint2 : MonoBehaviour
+public class FinishPoint : MonoBehaviour
 {
     [SerializeField] GameObject LevelComplete;
-    private void OnTriggerEnter(Collider collision)
+   private void OnTriggerEnter(Collider collision)
     {
         if (collision.CompareTag("Player"))
         {
             LevelComplete.SetActive(true);
+            //Debug.Log("Level Completed!");
         }
     }
-
 }

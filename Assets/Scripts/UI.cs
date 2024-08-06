@@ -14,17 +14,17 @@ public class UI : MonoBehaviour
 
     private void Start()
     {
-     
-      audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<Audio>();
-       
+
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<Audio>();
+
     }
 
 
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync(1);
-       audioManager.PlaySFX(audioManager.ButtonClick);
-        
+        audioManager.PlaySFX(audioManager.ButtonClick);
+
     }
 
     public void Setting()
@@ -48,14 +48,14 @@ public class UI : MonoBehaviour
         Panel.SetActive(true);
         audioManager.PlaySFX(audioManager.IconClick);
         Time.timeScale = 0f;
-       
+
     }
 
     public void ResumeGame()
     {
         Panel.SetActive(false);
         audioManager.PlaySFX(audioManager.ButtonClick);
-        Time.timeScale = 1f; 
+        Time.timeScale = 1f;
     }
 
     public void Restart()
@@ -70,5 +70,10 @@ public class UI : MonoBehaviour
         SceneManager.LoadSceneAsync(0);
         audioManager.PlaySFX(audioManager.ButtonClick);
         Time.timeScale = 1f;
+    }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterHealth : MonoBehaviour
 {
+    [SerializeField] GameObject GameOver;
    private int _health;
 
    private void Start()
@@ -16,6 +18,7 @@ public class CharacterHealth : MonoBehaviour
    {
       if (_health <= 0)
       {
+         GameOver.SetActive(true);
          Debug.Log("Add Character dead animation here"); 
          // add level reset code here 
       }
