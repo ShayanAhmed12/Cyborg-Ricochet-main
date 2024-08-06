@@ -7,16 +7,16 @@ using UnityEngine.UI;
 
 public class UI : MonoBehaviour
 {
-    VideoPlayer videoPlayer;
+    [HideInInspector] public VideoPlayer videoPlayer;
     [SerializeField] GameObject Panel;
     [SerializeField] private GameObject levelsPanel;
-    Audio audioManager;
+    [HideInInspector] public Audio _audioManager;
 
 
     private void Start()
     {
 
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<Audio>();
+        _audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<Audio>();
 
     }
 
@@ -24,14 +24,14 @@ public class UI : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync(1);
-        audioManager.PlaySFX(audioManager.ButtonClick);
+        _audioManager.PlaySFX(_audioManager.ButtonClick);
 
     }
 
     public void Setting()
     {
         Panel.SetActive(true);
-        audioManager.PlaySFX(audioManager.IconClick);
+        _audioManager.PlaySFX(_audioManager.IconClick);
 
 
     }
@@ -39,7 +39,7 @@ public class UI : MonoBehaviour
     public void BackToMenu()
     {
         Panel.SetActive(false);
-        audioManager.PlaySFX(audioManager.ButtonClick);
+        _audioManager.PlaySFX(_audioManager.ButtonClick);
 
 
     }
@@ -47,7 +47,7 @@ public class UI : MonoBehaviour
     public void PauseGame()
     {
         Panel.SetActive(true);
-        audioManager.PlaySFX(audioManager.IconClick);
+        _audioManager.PlaySFX(_audioManager.IconClick);
         Time.timeScale = 0f;
 
     }
@@ -55,21 +55,21 @@ public class UI : MonoBehaviour
     public void ResumeGame()
     {
         Panel.SetActive(false);
-        audioManager.PlaySFX(audioManager.ButtonClick);
+        _audioManager.PlaySFX(_audioManager.ButtonClick);
         Time.timeScale = 1f;
     }
 
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        audioManager.PlaySFX(audioManager.ButtonClick);
+        _audioManager.PlaySFX(_audioManager.ButtonClick);
         Time.timeScale = 1f;
     }
 
     public void MainMenu()
     {
         SceneManager.LoadSceneAsync(0);
-        audioManager.PlaySFX(audioManager.ButtonClick);
+        _audioManager.PlaySFX(_audioManager.ButtonClick);
         Time.timeScale = 1f;
     }
 

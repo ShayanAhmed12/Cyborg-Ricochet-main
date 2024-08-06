@@ -12,6 +12,7 @@ public class EnemyAttack : MonoBehaviour
     private GameObject _gameObject;
     private Animator _animator;
     private CharacterAttack _characterAttack;
+    private bool _characterContact;
     
     void Start()
     {
@@ -27,9 +28,12 @@ public class EnemyAttack : MonoBehaviour
     {
         if (_fieldofView.canSeePlayer && _dragAndShoot.isGrounded)
         {
-            _animator.SetBool("Shooting", true);
             _animator.SetBool("Alert",false);
-            ShootAtPlayer();
+            if (!_characterContact)
+            {
+                _animator.SetBool("Shooting", true);
+                ShootAtPlayer();
+            }
         }
         if (_fieldofView.canSeePlayer && !_dragAndShoot.isGrounded)
         {
@@ -52,11 +56,16 @@ public class EnemyAttack : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && !_characterContact){
+            _characterContact = true;
+            gameObject.layer = 10;
+        }
+        if (other.gameObject.CompareTag("Player") && !_characterAttack.IndirectAttack)
         {
             _animator.SetBool("Death", true);
             Destroy(this.gameObject,0.85f);
         }
+        
     }
     
     

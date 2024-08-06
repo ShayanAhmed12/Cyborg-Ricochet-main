@@ -32,8 +32,8 @@ public class DragAndShoot : MonoBehaviour
     public bool isGrounded;
     private bool _isDragging;
     private RaycastHit _hit;
-    public Animator _animator;
-    public Audio _audioManager;
+    [HideInInspector] public Animator _animator;
+    [HideInInspector] public Audio _audioManager;
 
     private void Start()
     {
@@ -97,7 +97,7 @@ public class DragAndShoot : MonoBehaviour
             rb.useGravity = false;
             _animator.SetBool("ChargeUp", false);
              _audioManager.PlaySFX(_audioManager.Booster);
-            if (_tempVec.y > _CharacterCenter.y) { // launched upwards
+            if (_tempVec.y > _CharacterCenter.y && !_trajectory.characterAim) { // launched upwards and not towards enemy 
                 _animator.SetBool("StartJumping", true); 
                 instantiatedSprite = Instantiate(spritePrefab, _tempVec - new Vector3(0f,0.2f,0f), Quaternion.identity);
             }

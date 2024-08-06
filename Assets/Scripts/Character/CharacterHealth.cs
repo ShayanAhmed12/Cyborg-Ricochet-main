@@ -39,6 +39,7 @@ public class CharacterHealth : MonoBehaviour
       {
          _health = 100;
          HealthBar.SetMaxHealth(_health);
+         Debug.Log("Healed!");
       }
    }
 }

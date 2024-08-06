@@ -996,7 +996,7 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 1552ad4cbb9a9f34c957884303410e79,
         type: 3}
       propertyPath: m_UpdateMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 1552ad4cbb9a9f34c957884303410e79,
         type: 3}
@@ -1670,8 +1670,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb71df1c0f962384d801f3a0f1fa5403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 0}
   Panel: {fileID: 1208371581}
   levelsPanel: {fileID: 0}
+  _audioManager: {fileID: 0}
 --- !u!1001 &430913577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2281,7 +2283,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 72
+  m_Constraints: 122
   m_CollisionDetection: 1
 --- !u!114 &720560749
 MonoBehaviour:
@@ -2562,6 +2564,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ac5b12489b975648a06319b1c939db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameObject: {fileID: 720560745}
+  IndirectAttack: 0
 --- !u!114 &741349801
 MonoBehaviour:
   m_ObjectHideFlags: 0
