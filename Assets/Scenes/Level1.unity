@@ -1671,6 +1671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Panel: {fileID: 1208371581}
+  levelsPanel: {fileID: 0}
 --- !u!1001 &430913577
 PrefabInstance:
   m_ObjectHideFlags: 0
