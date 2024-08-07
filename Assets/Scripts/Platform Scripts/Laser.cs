@@ -16,14 +16,18 @@ public class Laser : MonoBehaviour
     private CharacterHealth _characterHealth;
     private Ray ray;
 
+    [SerializeField] private float laserTime;
+
     private bool state;
 
     // Start is called before the first frame update
     void Start()
     {
+        lineRenderer.SetWidth(0.05f, 0.05f);
         state = true;
         lineRenderer.positionCount = 2;
-        InvokeRepeating("ToggleLaser", 2f, 2f);
+
+        InvokeRepeating("ToggleLaser", laserTime, laserTime);
         _characterObject = GameObject.FindWithTag("Player");
            _characterHealth = _characterObject.GetComponent<CharacterHealth>();
         

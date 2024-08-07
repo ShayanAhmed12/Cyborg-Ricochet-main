@@ -17,7 +17,6 @@ public class UI : MonoBehaviour
     {
 
         _audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<Audio>();
-
     }
 
 
@@ -55,16 +54,18 @@ public class UI : MonoBehaviour
 
     public void ResumeGame()
     {
+        Time.timeScale = 1f;
         Panel.SetActive(false);
         _audioManager.PlaySFX(_audioManager.ButtonClick);
-        Time.timeScale = 1f;
+        
     }
 
     public void Restart()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         _audioManager.PlaySFX(_audioManager.ButtonClick);
-        Time.timeScale = 1f;
+        
     }
 
     public void MainMenu()
@@ -96,5 +97,15 @@ public class UI : MonoBehaviour
     public void Level3()
     {
         SceneManager.LoadSceneAsync(3);
+    }
+
+    public void Level4()
+    {
+        SceneManager.LoadSceneAsync(4);
+    }
+
+    public void Level5()
+    {
+        SceneManager.LoadSceneAsync(5);
     }
 }
