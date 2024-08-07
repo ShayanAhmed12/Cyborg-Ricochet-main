@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1218392322410111898}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2.68, y: 0, z: 0}
+  m_LocalPosition: {x: -3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -54,7 +54,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0157b164d6329434c9ae98d56f7243ed, type: 2}
+  - {fileID: 2100000, guid: 8e05888a4900a284991c1510c9bf1825, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,14 +85,23 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.01663208
-        value: 0.08875275
+        time: 0
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.1051387
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -146,7 +155,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1218392322410111898}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bbe97bb56c44f547a55048a2081e939, type: 3}
+  m_Script: {fileID: 11500000, guid: 0173f63e9d6b8b449800dbad872cbb43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 5309127443427960923}
@@ -157,6 +166,7 @@ MonoBehaviour:
   OnHitTarget:
     m_PersistentCalls:
       m_Calls: []
+  laserTime: 2
 --- !u!1 &3332236377737824188
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,7 +227,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e707fea5c9f1ef64f805b757843d7bf6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.705
+      value: 3.17
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e707fea5c9f1ef64f805b757843d7bf6,
         type: 3}
@@ -311,7 +321,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e707fea5c9f1ef64f805b757843d7bf6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.744
+      value: -3.48
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e707fea5c9f1ef64f805b757843d7bf6,
         type: 3}

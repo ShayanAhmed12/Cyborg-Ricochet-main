@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlatformController : MonoBehaviour
 {
     public Transform PosA, PosB;
-    public int Speed;
+    public float Speed;
     private Rigidbody rb;
     Vector3 targetPos;
 
