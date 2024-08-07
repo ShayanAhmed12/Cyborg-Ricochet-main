@@ -2713,7 +2713,7 @@ PrefabInstance:
     - target: {fileID: 8409193156036877835, guid: 10bd8ccb223de5c44b9a985363a41f4f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.86
+      value: -3.41
       objectReference: {fileID: 0}
     - target: {fileID: 8409193156036877835, guid: 10bd8ccb223de5c44b9a985363a41f4f,
         type: 3}
@@ -2773,7 +2773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PosA: {fileID: 679596485}
   PosB: {fileID: 679596484}
-  Speed: 1
+  Speed: 2
 --- !u!1001 &683127165
 PrefabInstance:
   m_ObjectHideFlags: 0

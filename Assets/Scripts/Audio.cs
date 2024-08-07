@@ -40,6 +40,7 @@ public class Audio : MonoBehaviour
     public AudioClip IconClick;
     public AudioClip BulletSound;
     public AudioClip SwordAttack;
+    public AudioClip LaserHit;
 
 
     public void PlaySFX(AudioClip clip)

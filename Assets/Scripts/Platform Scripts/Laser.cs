@@ -15,6 +15,7 @@ public class Laser : MonoBehaviour
     private GameObject _characterObject;
     private CharacterHealth _characterHealth;
     private Ray ray;
+    private Audio _audioManager;
 
     [SerializeField] private float laserTime;
 
@@ -23,14 +24,16 @@ public class Laser : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lineRenderer.SetWidth(0.05f, 0.05f);
+        lineRenderer.startWidth = 0.05f;
+        lineRenderer.endWidth = 0.05f;
         state = true;
         lineRenderer.positionCount = 2;
 
         InvokeRepeating("ToggleLaser", laserTime, laserTime);
         _characterObject = GameObject.FindWithTag("Player");
            _characterHealth = _characterObject.GetComponent<CharacterHealth>();
-        
+           _audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<Audio>();
+
     }
 
     void ToggleLaser()
@@ -60,8 +63,8 @@ public class Laser : MonoBehaviour
                 lineRenderer.SetPosition(1, rayHit.point);
                 if (rayHit.collider.gameObject.CompareTag("Player"))
                 {
+                    _audioManager.PlaySFX(_audioManager.LaserHit);
                     _characterHealth.LaserDamage();
-                    Debug.Log("Play laser hit sound here");
                 }
             }
             else
