@@ -12,6 +12,8 @@ public class Laser : MonoBehaviour
     [SerializeField] private UnityEvent OnHitTarget;
 
     private RaycastHit rayHit;
+    private GameObject _characterObject;
+    private CharacterHealth _characterHealth;
     private Ray ray;
 
     private bool state;
@@ -22,6 +24,9 @@ public class Laser : MonoBehaviour
         state = true;
         lineRenderer.positionCount = 2;
         InvokeRepeating("ToggleLaser", 2f, 2f);
+        _characterObject = GameObject.FindWithTag("Player");
+           _characterHealth = _characterObject.GetComponent<CharacterHealth>();
+        
     }
 
     void ToggleLaser()
@@ -49,9 +54,10 @@ public class Laser : MonoBehaviour
             {
                 lineRenderer.SetPosition(0, transform.position);
                 lineRenderer.SetPosition(1, rayHit.point);
-                if (rayHit.collider.TryGetComponent(out Target target))
+                if (rayHit.collider.gameObject.CompareTag("Player"))
                 {
-                    target.Hit();
+                    _characterHealth.LaserDamage();
+                    Debug.Log("Play laser hit sound here");
                 }
             }
             else

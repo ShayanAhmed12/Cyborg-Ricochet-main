@@ -27,7 +27,7 @@ public class PlatformController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("ball"))
+        if(other.CompareTag("Player"))
         {
             other.transform.SetParent(this.transform);
             rb = other.GetComponent<Rigidbody>();
@@ -37,7 +37,7 @@ public class PlatformController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("ball"))
+        if (other.CompareTag("Player"))
         {
             rb.interpolation = RigidbodyInterpolation.Interpolate;
             other.transform.SetParent(null);

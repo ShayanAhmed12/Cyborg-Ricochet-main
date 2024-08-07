@@ -62,4 +62,5 @@ public class CharacterAttack : MonoBehaviour
             IndirectAttack = false;
         }
     }
+    
 }

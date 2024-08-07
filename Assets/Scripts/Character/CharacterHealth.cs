@@ -7,12 +7,12 @@ using UnityEngine.UI;
 public class CharacterHealth : MonoBehaviour
 {
     [SerializeField] GameObject GameOver;
-   private int _health;
+   private float _health;
    public HealthBar HealthBar;
 
    private void Start()
    {
-      _health = 100;
+      _health = 100f;
       HealthBar.SetMaxHealth(_health);
    }
 
@@ -21,15 +21,13 @@ public class CharacterHealth : MonoBehaviour
       if (_health <= 0)
       {
          GameOver.SetActive(true);
-         Debug.Log("Add Character dead animation here"); 
-         // add level reset code here 
       }
    }
    private void OnTriggerEnter(Collider other)
    {
       if (other.gameObject.CompareTag("Bullet"))
       {
-         _health -= 10;
+         _health -= 10f;
          HealthBar.SetHealth(_health);
       }
    }
@@ -37,9 +35,14 @@ public class CharacterHealth : MonoBehaviour
    {
       if (other.gameObject.CompareTag("enemy"))
       {
-         _health = 100;
+         _health = 100f;
          HealthBar.SetMaxHealth(_health);
          Debug.Log("Healed!");
       }
+   }
+   public void LaserDamage()
+   {
+      _health -= 0.1f;
+      HealthBar.SetHealth(_health);
    }
 }

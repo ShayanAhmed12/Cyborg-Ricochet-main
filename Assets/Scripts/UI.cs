@@ -89,4 +89,12 @@ public class UI : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(1);
     }
+    public void Level2()
+    {
+        SceneManager.LoadSceneAsync(2);
+    }
+    public void Level3()
+    {
+        SceneManager.LoadSceneAsync(3);
+    }
 }
