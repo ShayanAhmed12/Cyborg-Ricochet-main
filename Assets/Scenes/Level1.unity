@@ -1888,9 +1888,6 @@ CanvasRenderer:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6598166066773239027, guid: b52188794bdd44e4c94b3ae301936bdb,
     type: 3}
-<<<<<<< HEAD
-  m_PrefabInstance: {fileID: 1503151830819931216}
-=======
   m_PrefabInstance: {fileID: 1265999295}
   m_PrefabAsset: {fileID: 0}
 --- !u!136 &720560746
@@ -2016,7 +2013,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1552ad4cbb9a9f34c957884303410e79,
     type: 3}
   m_PrefabInstance: {fileID: 329146781}
->>>>>>> 5d50a644e1ffefd6b6baf134a3e6a665663060d6
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &741349793 stripped
 Transform:
@@ -5473,8 +5469,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.039999995, y: 0.021, z: 0.0035809085}
   m_Center: {x: 0, y: 0.0000000013969838, z: 0.0018425653}
-<<<<<<< HEAD
-=======
 --- !u!1 &1871107129
 GameObject:
   m_ObjectHideFlags: 0
@@ -5628,7 +5622,6 @@ MonoBehaviour:
   tempVec: {x: 0, y: 0, z: 0}
   bounceCount: 0
   characterAim: 0
->>>>>>> 5d50a644e1ffefd6b6baf134a3e6a665663060d6
 --- !u!1001 &1914711255
 PrefabInstance:
   m_ObjectHideFlags: 0
