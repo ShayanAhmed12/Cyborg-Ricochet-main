@@ -38,6 +38,8 @@ public class Audio : MonoBehaviour
     public AudioClip Bounce;
     public AudioClip ButtonClick;
     public AudioClip IconClick;
+    public AudioClip BulletSound;
+    public AudioClip SwordAttack;
 
 
     public void PlaySFX(AudioClip clip)

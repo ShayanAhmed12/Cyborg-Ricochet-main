@@ -2808,11 +2808,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1803225820}
   SFXSource: {fileID: 114714758}
-  Background: {fileID: 8300000, guid: 9c36bac647745ff40bd0294db3a681d1, type: 3}
+  Background: {fileID: 8300000, guid: b1f70c02aaafb7e4085cd455304c4ad0, type: 3}
   Booster: {fileID: 8300000, guid: f23e5ced8cef156479f97624aab47868, type: 3}
   Bounce: {fileID: 8300000, guid: 13bf689075d01994a94c5fd41e65c8c4, type: 3}
   ButtonClick: {fileID: 8300000, guid: 45ebd35ae2ea32040b9049fc671a0eca, type: 3}
   IconClick: {fileID: 8300000, guid: 75710d527dd4f4e499a00b1db58d6b0e, type: 3}
+  BulletSound: {fileID: 8300000, guid: 190078237e6586041a61fe57eea6d825, type: 3}
+  SwordAttack: {fileID: 8300000, guid: 9292747adfe7aa5499dde375b29d2bdc, type: 3}
 --- !u!4 &1972304966
 Transform:
   m_ObjectHideFlags: 0

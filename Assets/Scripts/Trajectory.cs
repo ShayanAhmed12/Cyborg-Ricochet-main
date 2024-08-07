@@ -64,6 +64,7 @@ public class Trajectory : MonoBehaviour
                     tempVec = pos;
                     return results;
                 }
+                
             }
             pos += moveStep;
             results[i] = pos;

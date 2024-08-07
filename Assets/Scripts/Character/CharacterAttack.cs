@@ -6,6 +6,7 @@ using UnityEngine;
 public class CharacterAttack : MonoBehaviour
 {
     private Trajectory _trajectory;
+    private Audio _audioManager;
     Animator _animator;
     private Animator enemyAnimator;
     public GameObject _gameObject;
@@ -18,6 +19,7 @@ public class CharacterAttack : MonoBehaviour
         _animator = GetComponent<Animator>();
         enemyAnimator = _gameObject.GetComponent<Animator>();
         _rb = GetComponent<Rigidbody>();
+        _audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<Audio>();
     }
 
     private void Update()
@@ -39,7 +41,7 @@ public class CharacterAttack : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
-            
+            _audioManager.PlaySFX(_audioManager.BulletSound);
             Destroy(other.gameObject);
         }
     }
@@ -62,5 +64,11 @@ public class CharacterAttack : MonoBehaviour
             IndirectAttack = false;
         }
     }
+
+    public void SwordSound()
+    {
+        _audioManager.PlaySFX(_audioManager.SwordAttack);
+    }
+    
     
 }
