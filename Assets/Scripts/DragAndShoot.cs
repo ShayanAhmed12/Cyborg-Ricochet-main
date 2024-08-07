@@ -1,4 +1,5 @@
 
+using System;
 using UnityEngine;
 
 
@@ -31,6 +32,9 @@ public class DragAndShoot : MonoBehaviour
 
     public bool isGrounded;
     private bool _isDragging;
+    private bool _isOnPlatform;
+    private bool _isCollidingwithFloor;
+    private bool _isCollidingwithPlatform;
     private RaycastHit _hit;
     [HideInInspector] public Animator _animator;
     [HideInInspector] public Audio _audioManager;
@@ -90,23 +94,35 @@ public class DragAndShoot : MonoBehaviour
             bounceCount = _trajectory.bounceCount;
             _isDragging = false;     
             _endPoint = _camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3f));
+            if (instantiatedSprite != null)
+            {
+                Destroy(instantiatedSprite); // a check if any unwanted sprites still remain 
+            }
 
             _force = new Vector3(Mathf.Clamp(_startPoint.x - _endPoint.x, minPower.x, maxPower.x),
                 Mathf.Clamp(_startPoint.y - _endPoint.y, minPower.y, maxPower.y), 0);
-            rb.velocity = _force * power;
-            rb.useGravity = false;
-            _animator.SetBool("ChargeUp", false);
-             _audioManager.PlaySFX(_audioManager.Booster);
-            if (_tempVec.y > _CharacterCenter.y && !_trajectory.characterAim) { // launched upwards and not towards enemy 
-                _animator.SetBool("StartJumping", true); 
-                instantiatedSprite = Instantiate(spritePrefab, _tempVec - new Vector3(0f,0.2f,0f), Quaternion.identity);
-            }
-            else
+             if (_tempVec.y <= _CharacterCenter.y && _isOnPlatform)
             {
+                rb.velocity = Vector3.zero;
                 _trajectory.EndLine02(); 
-                instantiatedSprite = Instantiate(spritePrefab, _tempVec + new Vector3(0f,0.4f,0), Quaternion.identity);
-                return; // if launched vertically downwards, spawn a gravity trigger slightly above to prevent infinite sliding   
             }
+             else
+             {
+                 rb.velocity = _force * power;
+                 rb.useGravity = false;
+                 _animator.SetBool("ChargeUp", false);
+                 _audioManager.PlaySFX(_audioManager.Booster);
+                 if (_tempVec.y >= _CharacterCenter.y && !_trajectory.characterAim) { // launched upwards and not towards enemy 
+                     _animator.SetBool("StartJumping", true); 
+                     instantiatedSprite = Instantiate(spritePrefab, _tempVec - new Vector3(0f,0.2f,0f), Quaternion.identity);
+                     _trajectory.EndLine02(); 
+                 }  else
+                 {
+                     _trajectory.EndLine02(); 
+                     instantiatedSprite = Instantiate(spritePrefab, _tempVec + new Vector3(0f,0.4f,0), Quaternion.identity); 
+                     // if launched vertically downwards, spawn a gravity trigger slightly above to prevent infinite sliding   
+                 }
+             }
         }
             
     }
@@ -144,8 +160,22 @@ public class DragAndShoot : MonoBehaviour
         }
     }
 
+    private void PlatformCollisionUpdate()
+    {
+        _isOnPlatform = _isCollidingwithPlatform && !_isCollidingwithFloor;
+    }
     private void OnCollisionEnter(Collision other)
     {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Platform"))
+        {
+            _isCollidingwithPlatform = true;
+        }
+
+        if (other.gameObject.layer == LayerMask.NameToLayer("Floor"))
+        {
+            _isCollidingwithFloor = true;
+        }
+        PlatformCollisionUpdate();
         if (!other.gameObject.CompareTag("bouncy"))
         {
             _animator.SetBool("StartJumping", false);
@@ -167,5 +197,20 @@ public class DragAndShoot : MonoBehaviour
         }
     }
 
+    void OnCollisionExit(Collision collision)
+    {
+        int collidedLayer = collision.gameObject.layer;
+
+        if (collidedLayer == LayerMask.NameToLayer("Platform"))
+        {
+            _isCollidingwithPlatform = false;
+        }
+
+        if (collidedLayer == LayerMask.NameToLayer("Floor"))
+        {
+            _isCollidingwithFloor = false;
+        }
+        PlatformCollisionUpdate();
+    }
 
 }

@@ -39,7 +39,8 @@ public class UI : MonoBehaviour
     public void BackToMenu()
     {
         Panel.SetActive(false);
-        _audioManager.PlaySFX(_audioManager.ButtonClick);
+        levelsPanel.SetActive(false);
+        _audioManager.PlaySFX(_audioManager.IconClick);
 
 
     }
@@ -81,5 +82,11 @@ public class UI : MonoBehaviour
     public void Levels()
     {
         levelsPanel.SetActive(true);
+        _audioManager.PlaySFX(_audioManager.IconClick);
+    }
+
+    public void Level1()
+    {
+        SceneManager.LoadSceneAsync(1);
     }
 }
