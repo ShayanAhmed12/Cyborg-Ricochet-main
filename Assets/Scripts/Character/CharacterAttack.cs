@@ -24,6 +24,7 @@ public class CharacterAttack : MonoBehaviour
     {
         if (_trajectory.characterAim && Input.GetMouseButtonUp(0))
         {
+            Debug.Log("Aim: "+_trajectory.characterAim);
             IndirectAttack = true;
             AttackAndAnimate();
         }
@@ -40,7 +41,6 @@ public class CharacterAttack : MonoBehaviour
         {
             
             Destroy(other.gameObject);
-            Debug.Log("Add Bullet explosion effect here");
         }
     }
 
