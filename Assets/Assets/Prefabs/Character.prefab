@@ -728,6 +728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOver: {fileID: 0}
+  _health: 0
   HealthBar: {fileID: 0}
 --- !u!114 &6254305972971474173
 MonoBehaviour:
