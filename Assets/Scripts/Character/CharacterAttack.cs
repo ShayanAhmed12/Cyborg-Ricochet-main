@@ -12,6 +12,7 @@ public class CharacterAttack : MonoBehaviour
     public GameObject _gameObject;
     public bool IndirectAttack;
     private Rigidbody _rb;
+    private HealthBar _healthBar;
 
     private void Start()
     {
@@ -20,6 +21,7 @@ public class CharacterAttack : MonoBehaviour
         enemyAnimator = _gameObject.GetComponent<Animator>();
         _rb = GetComponent<Rigidbody>();
         _audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<Audio>();
+        _healthBar = FindObjectOfType<HealthBar>();
     }
 
     private void Update()
@@ -58,6 +60,7 @@ public class CharacterAttack : MonoBehaviour
     {
         if (enemyAnimator != null)
         {
+            _healthBar.SetMaxHealth(100f);  // health set to max 
             enemyAnimator.SetBool("Death",true);
             Destroy(_gameObject,0.75f);
             Debug.Log("Enemy Dead!");

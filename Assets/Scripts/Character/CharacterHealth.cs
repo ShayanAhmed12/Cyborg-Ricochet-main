@@ -34,15 +34,6 @@ public class CharacterHealth : MonoBehaviour
          HealthBar.SetHealth(_health);
       }
    }
-   private void OnCollisionEnter(Collision other)
-   {
-      if (other.gameObject.CompareTag("enemy"))
-      {
-         _health = 100f;
-         HealthBar.SetMaxHealth(_health);
-         Debug.Log("Healed!");
-      }
-   }
    public void LaserDamage()
    {
       _health -= 0.5f;
