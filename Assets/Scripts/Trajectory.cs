@@ -27,6 +27,7 @@ public class Trajectory : MonoBehaviour
 
     public Vector3[] Plot(Vector3 pos, Vector3 force, int steps)
     {
+        characterAim = false;
         bounceCount = 0;
         Vector3[] results = new Vector3[steps];
         float timeStep = Time.fixedDeltaTime;
