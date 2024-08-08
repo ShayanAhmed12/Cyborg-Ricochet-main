@@ -78,7 +78,6 @@ public class DragAndShoot : MonoBehaviour
             Vector3 currentPoint = _camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3f));
             // _trail.RenderLine(currentPoint);
 
-
             _force = new Vector3(Mathf.Clamp(_startPoint.x - currentPoint.x, minPower.x, maxPower.x),
                 Mathf.Clamp(_startPoint.y - currentPoint.y, minPower.y, maxPower.y), 0);
 
@@ -94,6 +93,14 @@ public class DragAndShoot : MonoBehaviour
             bounceCount = _trajectory.bounceCount;
             _isDragging = false;     
             _endPoint = _camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3f));
+            // if (_tempVec.x < transform.position.x)
+            // {
+            //     transform.rotation = Quaternion.LookRotation(Vector3.left, Vector3.up);
+            // }
+            // else
+            // {
+            //     transform.rotation = Quaternion.LookRotation(Vector3.left, Vector3.down);
+            // }
             if (instantiatedSprite != null)
             {
                 Destroy(instantiatedSprite); // a check if any unwanted sprites still remain 
