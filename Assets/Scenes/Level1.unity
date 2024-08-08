@@ -583,7 +583,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -100, y: -97}
+  m_AnchoredPosition: {x: -55, y: -97}
   m_SizeDelta: {x: 330, y: 45}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &227895002
@@ -3905,6 +3905,7 @@ Transform:
   - {fileID: 366773021}
   - {fileID: 1766605589}
   - {fileID: 104275853}
+  - {fileID: 1409722279}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1206031659
@@ -4368,7 +4369,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 227895001}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1160336683}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6354,31 +6355,31 @@ PrefabInstance:
         type: 3}
       propertyPath: HealthBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 227895002}
     - target: {fileID: 5074114402664984101, guid: 592b81df75b77454ab084578a1866051,
         type: 3}
       propertyPath: power
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5074114402664984101, guid: 592b81df75b77454ab084578a1866051,
         type: 3}
       propertyPath: maxPower.x
-      value: 21
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5074114402664984101, guid: 592b81df75b77454ab084578a1866051,
         type: 3}
       propertyPath: maxPower.y
-      value: 12
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5074114402664984101, guid: 592b81df75b77454ab084578a1866051,
         type: 3}
       propertyPath: minPower.x
-      value: -21
+      value: -18
       objectReference: {fileID: 0}
     - target: {fileID: 5074114402664984101, guid: 592b81df75b77454ab084578a1866051,
         type: 3}
       propertyPath: minPower.y
-      value: -12
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 5114745039377908828, guid: 592b81df75b77454ab084578a1866051,
         type: 3}
@@ -6462,4 +6463,3 @@ SceneRoots:
   - {fileID: 4915874410801485811}
   - {fileID: 1503151830819931216}
   - {fileID: 1160336683}
-  - {fileID: 1409722279}
