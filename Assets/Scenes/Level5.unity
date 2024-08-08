@@ -2821,7 +2821,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _gameObject
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1427143444}
     - target: {fileID: 8016614086611341310, guid: 592b81df75b77454ab084578a1866051,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7973,6 +7973,11 @@ PrefabInstance:
       propertyPath: radius
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4269219018955693740, guid: b52188794bdd44e4c94b3ae301936bdb,
+        type: 3}
+      propertyPath: obstructionsLayer.m_Bits
+      value: 2368
+      objectReference: {fileID: 0}
     - target: {fileID: 5826168873488907849, guid: b52188794bdd44e4c94b3ae301936bdb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8033,6 +8038,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b52188794bdd44e4c94b3ae301936bdb, type: 3}
+--- !u!1 &1427143444 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6598166066773239027, guid: b52188794bdd44e4c94b3ae301936bdb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1427143443}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1438589703
 GameObject:
   m_ObjectHideFlags: 0
