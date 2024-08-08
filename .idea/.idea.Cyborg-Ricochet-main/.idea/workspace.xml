@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cac0c56b-4670-40df-b266-547766472141" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cyborg-Ricochet-main/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cyborg-Ricochet-main/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DragAndShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DragAndShoot.cs" afterDir="false" />
-    </list>
+    <list default="true" id="cac0c56b-4670-40df-b266-547766472141" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -121,7 +117,7 @@
       <workItem from="1723061700239" duration="1273000" />
       <workItem from="1723063734281" duration="2652000" />
       <workItem from="1723068371886" duration="850000" />
-      <workItem from="1723069876839" duration="5757000" />
+      <workItem from="1723069876839" duration="6533000" />
     </task>
     <servers />
   </component>
