@@ -8,6 +8,9 @@ public class DragAndShoot : MonoBehaviour
     public Rigidbody rb;
     [SerializeField] public float power = 5f;
 
+
+    private float trajYPos;
+    private float trajYPosInitial;
     private int bounceHit;
     private int bounceCount;
 
@@ -73,9 +76,19 @@ public class DragAndShoot : MonoBehaviour
             _startPoint = _camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3f));
             _isDragging = true;
             _animator.SetBool("ChargeUp", true);
-        }
+            trajYPosInitial = transform.position.y;
+
+}
         if (Input.GetMouseButton(0) && _isDragging)
         {
+            trajYPos = transform.position.y - trajYPosInitial;
+            Debug.Log("traj y pos: "+trajYPos);
+            Debug.Log("start pos: " + _startPoint.y);
+            if (trajYPos != trajYPosInitial)
+            {
+                _startPoint.y = _startPoint.y + trajYPos;
+            }
+
             Vector3 currentPoint = _camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3f));
             // _trail.RenderLine(currentPoint);
 
