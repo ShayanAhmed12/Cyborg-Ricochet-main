@@ -2735,7 +2735,12 @@ PrefabInstance:
     - target: {fileID: 5074114402664984101, guid: 592b81df75b77454ab084578a1866051,
         type: 3}
       propertyPath: power
-      value: 10
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5074114402664984101, guid: 592b81df75b77454ab084578a1866051,
+        type: 3}
+      propertyPath: steps
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5074114402664984101, guid: 592b81df75b77454ab084578a1866051,
         type: 3}
