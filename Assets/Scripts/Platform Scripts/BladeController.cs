@@ -8,10 +8,17 @@ public class BladeController : MonoBehaviour
     public float Speed;
     private Rigidbody rb;
     Vector3 targetPos;
+    public float rotationSpeed;
+    private GameObject _characterObject;
+    private CharacterHealth _characterHealth;
+    private Audio _audioManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        _characterObject = GameObject.FindWithTag("Player");
+        _characterHealth = _characterObject.GetComponent<CharacterHealth>();
+        _audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<Audio>();
         targetPos = PosB.position;
     }
 
@@ -30,20 +37,22 @@ public class BladeController : MonoBehaviour
         this.transform.Rotate(new Vector3(0, 0, rotationSpeed));
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionStay(Collision other)
     {
-        if (other.gameObject.CompareTag("ball"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Game over!");
+            _audioManager.PlaySFX(_audioManager.BladeHit);
+            _characterHealth.BladeDamage();
         }
     }
+
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawLine(PosA.position, PosB.position);
     }
-    public float rotationSpeed;
+    
 
 
 

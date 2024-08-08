@@ -27,6 +27,7 @@ public class DragAndShoot : MonoBehaviour
     private Vector3 _tempVec;
     private Vector3 _CharacterCenter;
 
+    private bool lookingRight;
 
     private bool dragforce;
 
@@ -84,6 +85,18 @@ public class DragAndShoot : MonoBehaviour
 
             Vector3[] trajectory = _trajectory.Plot(_CharacterCenter, _force * power, steps); // so that the trajectory starts from the middle of the character
             _trajectory.RenderTrajectory(trajectory);
+
+
+            if (_force.x < 0)
+            {
+                transform.rotation = Quaternion.LookRotation(Vector3.left, Vector3.up);
+                lookingRight = false;
+            }
+            else
+            {
+                transform.rotation = Quaternion.LookRotation(Vector3.right, Vector3.up);
+                lookingRight = true;
+            }
         }
 
 
@@ -93,14 +106,7 @@ public class DragAndShoot : MonoBehaviour
             bounceCount = _trajectory.bounceCount;
             _isDragging = false;     
             _endPoint = _camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3f));
-            // if (_tempVec.x < transform.position.x)
-            // {
-            //     transform.rotation = Quaternion.LookRotation(Vector3.left, Vector3.up);
-            // }
-            // else
-            // {
-            //     transform.rotation = Quaternion.LookRotation(Vector3.left, Vector3.down);
-            // }
+
             if (instantiatedSprite != null)
             {
                 Destroy(instantiatedSprite); // a check if any unwanted sprites still remain 
@@ -194,6 +200,16 @@ public class DragAndShoot : MonoBehaviour
         else if (other.gameObject.CompareTag("bouncy"))
         {
             bounceHit++;
+            if (lookingRight)
+            {
+                transform.rotation = Quaternion.LookRotation(Vector3.left, Vector3.up);
+                lookingRight = false;
+            }
+            else
+            {
+                transform.rotation = Quaternion.LookRotation(Vector3.right, Vector3.up);
+                lookingRight = true;
+            }
             if ((bounceCount != 0 && bounceHit >= bounceCount))
             {
                 Debug.Log("2");

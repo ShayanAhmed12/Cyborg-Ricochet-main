@@ -2861,6 +2861,7 @@ MonoBehaviour:
   BulletSound: {fileID: 8300000, guid: 190078237e6586041a61fe57eea6d825, type: 3}
   SwordAttack: {fileID: 8300000, guid: 9292747adfe7aa5499dde375b29d2bdc, type: 3}
   LaserHit: {fileID: 8300000, guid: ac7b24fe1a5de6e468ccd117b38e4f72, type: 3}
+  BladeHit: {fileID: 8300000, guid: f5cf39c666d06904f8d52e86e795d9fa, type: 3}
 --- !u!4 &1972304966
 Transform:
   m_ObjectHideFlags: 0
