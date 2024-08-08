@@ -36,7 +36,7 @@ public class CharacterHealth : MonoBehaviour
     }
     public void LaserDamage()
     {
-        _health -= 0.5f;
+        _health -= 0.8f;
         HealthBar.SetHealth(_health);
     }
 
