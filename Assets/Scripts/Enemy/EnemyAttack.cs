@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     [SerializeField] private float timer = 5f;
+    [SerializeField] GameObject VFX; 
     private float bulletTime;
     public Transform spawnPoint;
     public float power;
@@ -22,6 +23,7 @@ public class EnemyAttack : MonoBehaviour
         _dragAndShoot = _gameObject.GetComponent<DragAndShoot>();
         _animator = GetComponent<Animator>();
         _characterAttack = _gameObject.GetComponent<CharacterAttack>();
+        VFX.SetActive(false);
     }
     
     void Update()
@@ -59,11 +61,13 @@ public class EnemyAttack : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && !_characterContact){
             _characterContact = true;
             gameObject.layer = 10;
+            VFX.SetActive(true);
         }
         if (other.gameObject.CompareTag("Player") && !_characterAttack.IndirectAttack)
         {
             _animator.SetBool("Death", true);
             Destroy(this.gameObject,0.85f);
+            
         }
         
     }
