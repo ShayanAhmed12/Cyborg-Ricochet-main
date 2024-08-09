@@ -60,7 +60,8 @@ public class CharacterAttack : MonoBehaviour
     {
         if (enemyAnimator != null)
         {
-            _healthBar.SetMaxHealth(100f);  // health set to max 
+            _healthBar.SetMaxHealth(100f); // health set to max 
+            _audioManager.PlaySFX(_audioManager.EnemyDeath);
             enemyAnimator.SetBool("Death",true);
             Destroy(_gameObject,0.75f);
             Debug.Log("Enemy Dead!");

@@ -42,6 +42,7 @@ public class Audio : MonoBehaviour
     public AudioClip SwordAttack;
     public AudioClip LaserHit;
     public AudioClip BladeHit;
+    public AudioClip EnemyDeath;
 
 
     public void PlaySFX(AudioClip clip)
