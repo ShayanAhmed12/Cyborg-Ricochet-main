@@ -1,5 +1,6 @@
 
 using System;
+using System.Threading;
 using UnityEngine;
 
 
@@ -18,6 +19,7 @@ public class DragAndShoot : MonoBehaviour
     public Vector2 maxPower;
     public GameObject spritePrefab;
     public GameObject instantiatedSprite;
+    private ParticleSystem _DustParticles;
 
     private Camera _camera;
     private Vector3 _force;
@@ -39,6 +41,8 @@ public class DragAndShoot : MonoBehaviour
     private bool _isOnPlatform;
     private bool _isCollidingwithFloor;
     private bool _isCollidingwithPlatform;
+    private bool _DustParticleController;
+    private Vector3 _initialPosition;
     private RaycastHit _hit;
     [HideInInspector] public Animator _animator;
     [HideInInspector] public Audio _audioManager;
@@ -49,8 +53,10 @@ public class DragAndShoot : MonoBehaviour
         _camera = Camera.main;
         // _trail = GetComponent<LineTrail>();
         _trajectory = GetComponentInChildren<Trajectory>();
+        _DustParticles = GetComponentInChildren<ParticleSystem>();
         _animator = GetComponent<Animator>();
         _audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<Audio>();
+        _initialPosition = transform.position;
     }
 
 
@@ -64,13 +70,24 @@ public class DragAndShoot : MonoBehaviour
         isGrounded = Physics.BoxCast(_CharacterCenter, halfExtents, Vector3.down, out _hit, orientation, maxDistance);
         if (!isGrounded)
         {
+            if (!_DustParticleController)
+            {
+                _DustParticles.Stop();
+                _DustParticleController = true;
+            }
             // _trail.EndLine();
             _trajectory.EndLine02();
             Debug.Log("Not grounded");
 
             return;
         }
-
+        Debug.Log("PLay Effect");
+        
+            if (_DustParticleController)
+            {
+                _DustParticles.Play();
+                _DustParticleController = false;
+            }
         if (Input.GetMouseButtonDown(0))
         {
             _startPoint = _camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3f));
@@ -159,6 +176,7 @@ public class DragAndShoot : MonoBehaviour
             ApplyDrag();
         }
     }
+    
 
     void ApplyDrag()
     {

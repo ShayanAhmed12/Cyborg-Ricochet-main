@@ -13,6 +13,7 @@ public class EnemyAttack : MonoBehaviour
     private GameObject _gameObject;
     private Animator _animator;
     private CharacterAttack _characterAttack;
+    private Audio _audioManager;
     private bool _characterContact;
     
     void Start()
@@ -23,6 +24,7 @@ public class EnemyAttack : MonoBehaviour
         _dragAndShoot = _gameObject.GetComponent<DragAndShoot>();
         _animator = GetComponent<Animator>();
         _characterAttack = _gameObject.GetComponent<CharacterAttack>();
+        _audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<Audio>();
         VFX = GameObject.Find("WFXMR_Explosion StarSmoke");
         VFX.SetActive(false);
     }
@@ -65,7 +67,9 @@ public class EnemyAttack : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Player") && !_characterAttack.IndirectAttack)
         {
+            _audioManager.PlaySFX(_audioManager.EnemyDeath);
             _animator.SetBool("Death", true);
+            
             Destroy(this.gameObject,0.85f);
             
         }
