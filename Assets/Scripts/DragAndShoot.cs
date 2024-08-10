@@ -42,7 +42,6 @@ public class DragAndShoot : MonoBehaviour
     private bool _isCollidingwithFloor;
     private bool _isCollidingwithPlatform;
     private bool _DustParticleController;
-    private Vector3 _initialPosition;
     private RaycastHit _hit;
     [HideInInspector] public Animator _animator;
     [HideInInspector] public Audio _audioManager;
@@ -56,7 +55,6 @@ public class DragAndShoot : MonoBehaviour
         _DustParticles = GetComponentInChildren<ParticleSystem>();
         _animator = GetComponent<Animator>();
         _audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<Audio>();
-        _initialPosition = transform.position;
     }
 
 
