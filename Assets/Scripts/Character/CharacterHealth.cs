@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class CharacterHealth : MonoBehaviour
 {
@@ -36,7 +37,7 @@ public class CharacterHealth : MonoBehaviour
     }
     public void LaserDamage()
     {
-        _health -= 0.8f;
+        _health -= 100f * Time.deltaTime;
         HealthBar.SetHealth(_health);
     }
 
