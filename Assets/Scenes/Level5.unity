@@ -1584,7 +1584,7 @@ PrefabInstance:
         type: 3}
       propertyPath: HealthBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 415813784}
     - target: {fileID: 5074114402664984101, guid: 592b81df75b77454ab084578a1866051,
         type: 3}
       propertyPath: power
