@@ -57,7 +57,7 @@ public class Trajectory : MonoBehaviour
                     return results;
                     
                 }
-                else if (hit.collider.gameObject.CompareTag("ground"))
+                else if (hit.collider.gameObject.CompareTag("ground") || hit.collider.gameObject.CompareTag("MovingPlatform"))
                 {
                     characterAim = false;
                     _lr.startColor = _c1; 
