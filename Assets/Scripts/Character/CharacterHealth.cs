@@ -1,9 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using CandyCoded.HapticFeedback;
 
 public class CharacterHealth : MonoBehaviour
 {
@@ -31,18 +30,21 @@ public class CharacterHealth : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
+            HapticFeedback.LightFeedback();
             _health -= 10f;
             HealthBar.SetHealth(_health);
         }
     }
     public void LaserDamage()
     {
+        HapticFeedback.HeavyFeedback();
         _health -= 100f * Time.deltaTime;
         HealthBar.SetHealth(_health);
     }
 
     public void BladeDamage()
     {
+        HapticFeedback.HeavyFeedback();
         _health -= 2f;
         HealthBar.SetHealth(_health);
     }
