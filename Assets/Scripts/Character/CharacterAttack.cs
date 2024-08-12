@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CharacterAttack : MonoBehaviour
@@ -11,6 +12,7 @@ public class CharacterAttack : MonoBehaviour
     private Animator enemyAnimator;
     public GameObject _gameObject;
     public bool IndirectAttack;
+    private TrailRenderer _trailRenderer;
     private Rigidbody _rb;
     private HealthBar _healthBar;
 
@@ -18,6 +20,7 @@ public class CharacterAttack : MonoBehaviour
     {
         _trajectory = GetComponentInChildren<Trajectory>();
         _animator = GetComponent<Animator>();
+        _trailRenderer = GetComponentInChildren<TrailRenderer>();
         enemyAnimator = _gameObject.GetComponent<Animator>();
         _rb = GetComponent<Rigidbody>();
         _audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<Audio>();
@@ -46,6 +49,10 @@ public class CharacterAttack : MonoBehaviour
             _audioManager.PlaySFX(_audioManager.BulletSound);
             Destroy(other.gameObject);
         }
+        else if (other.gameObject.CompareTag("MovingPlatform"))
+        {
+            _trailRenderer.enabled = false;
+        }
     }
 
     private void OnCollisionEnter(Collision other)
@@ -54,6 +61,15 @@ public class CharacterAttack : MonoBehaviour
         {
             _rb.velocity = Vector3.zero;
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+            if (other.gameObject.CompareTag("MovingPlatform"))
+            {
+                _trailRenderer.enabled = true;
+            
+            }
     }
 
     public void EnemyAnimation()

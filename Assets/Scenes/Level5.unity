@@ -6303,6 +6303,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 9146080038802744227, guid: 10bd8ccb223de5c44b9a985363a41f4f,
+        type: 3}
+      propertyPath: m_TagString
+      value: MovingPlatform
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3394183369862358766, guid: 10bd8ccb223de5c44b9a985363a41f4f, type: 3}
     m_RemovedGameObjects: []
@@ -6929,6 +6934,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9146080038802744227, guid: 10bd8ccb223de5c44b9a985363a41f4f,
+        type: 3}
+      propertyPath: m_TagString
+      value: MovingPlatform
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3394183369862358766, guid: 10bd8ccb223de5c44b9a985363a41f4f, type: 3}
