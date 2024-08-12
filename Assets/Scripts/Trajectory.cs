@@ -51,7 +51,6 @@ public class Trajectory : MonoBehaviour
                 else if (hit.collider.gameObject.CompareTag("enemy"))
                 {
                     characterAim = true;
-                    Debug.Log("Enemy Detected!");
                     _lr.startColor = _c3; 
                     tempVec = pos;
                     return results;
@@ -61,7 +60,6 @@ public class Trajectory : MonoBehaviour
                 {
                     characterAim = false;
                     _lr.startColor = _c1; 
-                    Debug.Log("Platform Detected!");
                     tempVec = pos;
                     return results;
                 }

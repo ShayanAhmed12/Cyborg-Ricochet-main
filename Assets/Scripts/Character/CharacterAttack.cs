@@ -31,7 +31,6 @@ public class CharacterAttack : MonoBehaviour
     {
         if (_trajectory.characterAim && Input.GetMouseButtonUp(0))
         {
-            Debug.Log("Aim: "+_trajectory.characterAim);
             IndirectAttack = true;
             AttackAndAnimate();
         }
@@ -80,7 +79,6 @@ public class CharacterAttack : MonoBehaviour
             _audioManager.PlaySFX(_audioManager.EnemyDeath);
             enemyAnimator.SetBool("Death",true);
             Destroy(_gameObject,0.75f);
-            Debug.Log("Enemy Dead!");
             IndirectAttack = false;
         }
     }

@@ -72,11 +72,9 @@ public class DragAndShoot : MonoBehaviour
                 _DustParticleController = true;
             }
             _trajectory.EndLine02();
-            Debug.Log("Not grounded");
 
             return;
         }
-        Debug.Log("PLay Effect");
         
             if (_DustParticleController)
             {
@@ -237,7 +235,6 @@ public class DragAndShoot : MonoBehaviour
             }
             if ((bounceCount != 0 && bounceHit >= bounceCount))
             {
-                Debug.Log("2");
                 bounceHit = 0;
                 bounceCount = 0;
                 _audioManager.PlaySFX(_audioManager.Bounce);

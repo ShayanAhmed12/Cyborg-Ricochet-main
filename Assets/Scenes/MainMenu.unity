@@ -2815,7 +2815,7 @@ MonoBehaviour:
   IconClick: {fileID: 8300000, guid: 75710d527dd4f4e499a00b1db58d6b0e, type: 3}
   BulletSound: {fileID: 8300000, guid: 190078237e6586041a61fe57eea6d825, type: 3}
   SwordAttack: {fileID: 8300000, guid: 9292747adfe7aa5499dde375b29d2bdc, type: 3}
-  LaserHit: {fileID: 8300000, guid: ac7b24fe1a5de6e468ccd117b38e4f72, type: 3}
+  LaserHit: {fileID: 8300000, guid: ddfc9aa2df06b33489c4ce31c4722d97, type: 3}
   BladeHit: {fileID: 8300000, guid: f5cf39c666d06904f8d52e86e795d9fa, type: 3}
   EnemyDeath: {fileID: 8300000, guid: 818652c82801b8b4ab342f58b27a8d09, type: 3}
 --- !u!4 &1972304966
