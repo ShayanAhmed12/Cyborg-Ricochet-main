@@ -18,14 +18,13 @@ public class DragAndShoot : MonoBehaviour
     public Vector2 minPower;
     public Vector2 maxPower;
     public GameObject spritePrefab;
-    public GameObject instantiatedSprite;
+    [HideInInspector] public GameObject instantiatedSprite;
     private ParticleSystem _DustParticles;
 
     private Camera _camera;
     private Vector3 _force;
     private Vector3 _startPoint;
     private Vector3 _endPoint;
-    private LineTrail _trail;
     private Trajectory _trajectory;
     [SerializeField] private int steps;
 
@@ -50,7 +49,6 @@ public class DragAndShoot : MonoBehaviour
     {
         bounceHit = 0;
         _camera = Camera.main;
-        // _trail = GetComponent<LineTrail>();
         _trajectory = GetComponentInChildren<Trajectory>();
         _DustParticles = GetComponentInChildren<ParticleSystem>();
         _animator = GetComponent<Animator>();
@@ -73,7 +71,6 @@ public class DragAndShoot : MonoBehaviour
                 _DustParticles.Stop();
                 _DustParticleController = true;
             }
-            // _trail.EndLine();
             _trajectory.EndLine02();
             Debug.Log("Not grounded");
 
@@ -104,7 +101,6 @@ public class DragAndShoot : MonoBehaviour
             }
 
             Vector3 currentPoint = _camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3f));
-            // _trail.RenderLine(currentPoint);
 
             _force = new Vector3(Mathf.Clamp(_startPoint.x - currentPoint.x, minPower.x, maxPower.x),
                 Mathf.Clamp(_startPoint.y - currentPoint.y, minPower.y, maxPower.y), 0);
