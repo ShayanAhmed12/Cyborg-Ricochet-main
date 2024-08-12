@@ -18,7 +18,7 @@ public class CharacterHealth : MonoBehaviour
         HealthBar.SetMaxHealth(_health);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (_health <= 0)
         {

@@ -29,7 +29,7 @@ public class EnemyAttack : MonoBehaviour
         VFX.SetActive(false);
     }
     
-    void Update()
+    void FixedUpdate()
     {
         if (_fieldofView.canSeePlayer && _dragAndShoot.isGrounded)
         {

@@ -32,8 +32,7 @@ public class FieldofView : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("CanSee: "+canSeePlayer);
-        // Debug.Log("Target Center: "+targetCenter);
+
     }
 
     private IEnumerator FOVRoutine()
