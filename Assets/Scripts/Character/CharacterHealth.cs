@@ -30,7 +30,7 @@ public class CharacterHealth : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
-            HapticFeedback.LightFeedback();
+            HapticFeedback.HeavyFeedback();
             _health -= 10f;
             HealthBar.SetHealth(_health);
         }
