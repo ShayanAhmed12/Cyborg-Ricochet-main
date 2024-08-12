@@ -78,6 +78,7 @@ public class UI : MonoBehaviour
     public void NextLevel()
     {
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        _audioManager.PlaySFX(_audioManager.ButtonClick);
     }
     
     public void Levels()
