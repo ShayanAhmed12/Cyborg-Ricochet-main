@@ -2,7 +2,7 @@
 using System;
 using System.Threading;
 using UnityEngine;
-
+using CandyCoded.HapticFeedback;
 
 public class DragAndShoot : MonoBehaviour
 {
@@ -223,6 +223,7 @@ public class DragAndShoot : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("bouncy"))
         {
+            HapticFeedback.MediumFeedback();
             bounceHit++;
             if (lookingRight)
             {

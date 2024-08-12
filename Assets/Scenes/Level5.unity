@@ -1670,6 +1670,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 6864106256259509686, guid: 592b81df75b77454ab084578a1866051,
+        type: 3}
+      propertyPath: nonPlayer.m_Bits
+      value: 2496
+      objectReference: {fileID: 0}
     - target: {fileID: 6904133015435485449, guid: 592b81df75b77454ab084578a1866051,
         type: 3}
       propertyPath: _gameObject
@@ -2172,7 +2177,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9917dfd35ce220b41ac06b7929fce05b,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9917dfd35ce220b41ac06b7929fce05b,
         type: 3}
@@ -6651,7 +6656,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9917dfd35ce220b41ac06b7929fce05b,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9917dfd35ce220b41ac06b7929fce05b,
         type: 3}
